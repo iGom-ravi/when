@@ -3,18 +3,11 @@ pipeline{
   stages{
     stage("Build master"){
       when {
-        branch "master"
+        changeRequest()
       }
       steps{
         echo "Building master"
     }
   }
-    stage('Build Dev'){
-      when{
-        branch 'dev'
-      }
-      steps{
-        echo 'Building dev'
-      }
-    }
+  }  
 }
